@@ -13,28 +13,15 @@
 ##    1 - matrix
 makeCacheMatrix <- function(x = matrix()) {
   cached_matrix <- NULL
-  
   ## set the matrix
   set <- function(y){
     x <<-y
     cached_matrix <<- NULL
   }
-  
-  ## get the matrix
-  get <- function() x  ## get the matrix
-  
-  ## set the inverted matrix
-  setinverse <- function(inverse){ 
-    cached_matrix <<- inverse
-  }
-  
-  ## get the inverted martix
-  getinverse <- function(){
-    cached_matrix
-  }
-  
+  get <- function() x                                       ## get the matrix
+  setinverse <- function(inverse) cached_matrix <<- inverse ## set the inverted matrix
+  getinverse <- function() cached_matrix                    ## get the inverted martix
   list(get = get, set = set, setinverse = setinverse, getinverse = getinverse)
-
 }
 
 
